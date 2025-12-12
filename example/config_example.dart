@@ -7,6 +7,7 @@ import 'package:blt_netguardian_client/services/api_service.dart';
 import 'package:blt_netguardian_client/services/task_manager.dart';
 import 'package:blt_netguardian_client/services/target_manager.dart';
 import 'package:blt_netguardian_client/services/result_manager.dart';
+import 'package:blt_netguardian_client/models/target.dart';
 
 /// Development environment configuration
 class DevelopmentConfig {

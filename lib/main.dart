@@ -22,34 +22,22 @@ class NetGuardianApp extends StatelessWidget {
           create: (context) => TaskProvider(
             taskManager: context.read<AppProvider>().taskManager,
           ),
-          update: (context, appProvider, previous) {
-            if (appProvider.isInitialized) {
-              return previous ?? TaskProvider(taskManager: appProvider.taskManager);
-            }
-            return previous ?? TaskProvider(taskManager: appProvider.taskManager);
-          },
+          update: (context, appProvider, previous) =>
+              previous ?? TaskProvider(taskManager: appProvider.taskManager),
         ),
         ChangeNotifierProxyProvider<AppProvider, TargetProvider>(
           create: (context) => TargetProvider(
             targetManager: context.read<AppProvider>().targetManager,
           ),
-          update: (context, appProvider, previous) {
-            if (appProvider.isInitialized) {
-              return previous ?? TargetProvider(targetManager: appProvider.targetManager);
-            }
-            return previous ?? TargetProvider(targetManager: appProvider.targetManager);
-          },
+          update: (context, appProvider, previous) =>
+              previous ?? TargetProvider(targetManager: appProvider.targetManager),
         ),
         ChangeNotifierProxyProvider<AppProvider, ResultProvider>(
           create: (context) => ResultProvider(
             resultManager: context.read<AppProvider>().resultManager,
           ),
-          update: (context, appProvider, previous) {
-            if (appProvider.isInitialized) {
-              return previous ?? ResultProvider(resultManager: appProvider.resultManager);
-            }
-            return previous ?? ResultProvider(resultManager: appProvider.resultManager);
-          },
+          update: (context, appProvider, previous) =>
+              previous ?? ResultProvider(resultManager: appProvider.resultManager),
         ),
       ],
       child: MaterialApp(
